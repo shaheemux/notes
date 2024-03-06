@@ -13,9 +13,13 @@ export default {
         // const name = req.body.name ... this way is long and repetitive
         // const age = req.body.age
         },
+
+
      getSpecific:async(req,res)=>{
          res.send(await getfriend(+req.params.id))
          },
+
+
     updateData: async(req,res)=>{
         // get the data before we make changes to the data
         const [friend] = await getfriend(+req.params.id)
@@ -28,6 +32,8 @@ export default {
         //setting to json data and sending
         res.json(await getFriends())
          },
+
+         
     deleteData: async(req,res)=>{
         res.send(await deleteFriend(+req.params.id))
         }
